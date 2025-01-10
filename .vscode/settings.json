@@ -1,0 +1,26 @@
+{
+  "cSpell.words": [
+    "Astra",
+    "chartjs",
+    "datalabels",
+    "datepicker",
+    "Docusign",
+    "endregion",
+    "immer",
+    "Jost",
+    "Logined",
+    "photoid",
+    "remixicon",
+    "Toastify",
+    "WATCHLIST",
+    "zustand"
+  ],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
