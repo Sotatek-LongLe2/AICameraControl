@@ -47,27 +47,27 @@ dayjs.extend(duration);
 dayjs.extend(utc);
 
 createRoot(document.getElementById("root")!).render(
-  // <StrictMode>
-  <CssVarsProvider defaultMode="dark" theme={theme}>
-    <CssBaseline />
-    <GlobalStyles styles={globalStyles} />
-    <SocketProvider>
-      <BrowserRouter>
-        <AppRouter />
-      </BrowserRouter>
-    </SocketProvider>
-    <Loading />
-    <ToastContainer
-      position="top-right"
-      autoClose={5_000}
-      hideProgressBar
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      closeButton={false}
-      pauseOnHover
-      theme="dark"
-    />
-  </CssVarsProvider>
-  // </StrictMode>
+  <StrictMode>
+    <CssVarsProvider defaultMode="dark" theme={theme}>
+      <CssBaseline />
+      <GlobalStyles styles={globalStyles} />
+      <SocketProvider>
+        <BrowserRouter>
+          <AppRouter />
+        </BrowserRouter>
+      </SocketProvider>
+      <Loading />
+      <ToastContainer
+        position="top-right"
+        autoClose={5_000}
+        hideProgressBar
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        closeButton={false}
+        pauseOnHover
+        theme="dark"
+      />
+    </CssVarsProvider>
+  </StrictMode>
 );

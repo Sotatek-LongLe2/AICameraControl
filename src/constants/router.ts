@@ -1,12 +1,8 @@
 import {
-  RiArrowLeftRightLine,
   RiBuilding4Line,
   RiCircleLine,
-  RiHomeSmileLine,
-  RiLockPasswordLine,
   RiLogoutBoxRLine,
   RiNewspaperLine,
-  RiRocketLine,
   RiUserLine,
 } from "@remixicon/react";
 import { Role } from "./enumBE";
@@ -99,17 +95,10 @@ export const PAGES_ADMIN = {
     CREATE: "/secondary/create",
     EDIT: "/secondary/edit/:id",
   },
-  COMPANIES: "/companies",
-  ANNOUNCEMENTS: {
-    INDEX: "/announcements",
-    CREATE: "/announcements/create",
-    EDIT: "/announcements/:id/edit",
-  },
-  ADMIN_MANAGEMENT: {
-    INDEX: "/admin-management",
-    EDIT: "/admin-management/edit",
-    CREATE: "/admin-management/create",
-  },
+  LIVE_VIDEO: "/live-video",
+  VIP_INFO: "/vip-info",
+  CAMERA_LIST: "/camera-list",
+  CAMERA_CONTROL: "/camera-control",
   PAGE_404: "/404",
   PAGE_500: "/500",
 } as const;
@@ -131,41 +120,30 @@ export const USER_NAVIGATE: {
 ] as const;
 
 export const ADMIN_NAVIGATE = [
-  { icon: RiHomeSmileLine, label: "Dashboard", path: PAGES_ADMIN.DASHBOARD },
-  {
-    icon: RiRocketLine,
-    label: "Primary",
-    path: PAGES_ADMIN.PRIMARY.INDEX,
-  },
-  {
-    icon: RiArrowLeftRightLine,
-    label: "Secondary",
-    path: PAGES_ADMIN.SECONDARY.INDEX,
-  },
   {
     icon: RiBuilding4Line,
-    label: "Companies",
-    path: PAGES_ADMIN.COMPANIES,
+    label: "Live Video",
+    path: PAGES_ADMIN.LIVE_VIDEO,
   },
   {
     icon: RiNewspaperLine,
-    label: "Announcements",
-    path: PAGES_ADMIN.ANNOUNCEMENTS.INDEX,
+    label: "VIP Info",
+    path: PAGES_ADMIN.VIP_INFO,
   },
   {
     icon: RiUserLine,
-    label: "Users",
+    label: "Configurations",
     path: PAGES_ADMIN.CUSTOMERS.INDEX,
     nested: [
       {
         icon: RiCircleLine,
-        label: "Customers",
-        path: PAGES_ADMIN.CUSTOMERS.INDEX,
+        label: "Camera List",
+        path: PAGES_ADMIN.CAMERA_LIST,
       },
       {
         icon: RiCircleLine,
-        label: "Admins",
-        path: PAGES_ADMIN.ADMIN_MANAGEMENT.INDEX,
+        label: "Camera Control",
+        path: PAGES_ADMIN.CAMERA_CONTROL,
         roles: [Role.SUPPER_ADMIN],
       },
     ],
@@ -178,11 +156,6 @@ export enum AdminInterfaceNavigate {
 }
 
 export const ADMIN_INTERFACE_NAVIGATE = [
-  {
-    icon: RiLockPasswordLine,
-    label: AdminInterfaceNavigate.CHANGE_PASSWORD,
-    path: PAGES_ADMIN.CHANGE_PASSWORD,
-  },
   {
     icon: RiLogoutBoxRLine,
     label: AdminInterfaceNavigate.LOG_OUT,

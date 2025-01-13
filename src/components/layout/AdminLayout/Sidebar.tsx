@@ -11,7 +11,6 @@ import {
 import { RiArrowDownSLine } from "@remixicon/react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { LogoAstra } from "src/assets/icon";
 import {
   ADMIN_INTERFACE_NAVIGATE,
   ADMIN_NAVIGATE,
@@ -169,14 +168,13 @@ const Sidebar = () => {
           gap: "14px",
         }}
       >
-        <LogoAstra width={32} height={28} />
         <Typography
           level="h6"
           sx={{
             letterSpacing: "0.15px",
           }}
         >
-          ASTRA ADMIN
+          ADMIN
         </Typography>
       </Box>
       <List sx={sxItem}>{renderMenuItems(ADMIN_NAVIGATE)}</List>

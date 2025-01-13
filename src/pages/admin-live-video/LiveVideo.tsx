@@ -1,7 +1,11 @@
 import { Box, Grid, Typography } from "@mui/joy";
 import { colors } from "src/styles/colors";
 
-const DashboardAdmin = () => {
+export type TErrorMessage = {
+  discordToken: string;
+};
+
+export const LiveVideoPage = () => {
   return (
     <Box
       sx={{
@@ -15,11 +19,9 @@ const DashboardAdmin = () => {
         sx={{ backgroundColor: "transparent", justifyContent: "space-between" }}
       >
         <Typography level="h4" sx={{ mb: 28 }}>
-          Dashboard Admin
+          Live Video
         </Typography>
       </Grid>
     </Box>
   );
 };
-
-export default DashboardAdmin;

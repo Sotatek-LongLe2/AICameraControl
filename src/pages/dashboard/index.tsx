@@ -1,11 +1,11 @@
 import { SITE_USER } from "src/constants/env";
-import DashboardAdmin from "./DashboardAdmin";
 import DashboardUser from "./DashboardUser";
+import AdminLiveVideoPage from "../admin-live-video";
 
 const Dashboard = () => {
   if (SITE_USER) return <DashboardUser />;
 
-  return <DashboardAdmin />;
+  return <AdminLiveVideoPage />;
 };
 
 export default Dashboard;

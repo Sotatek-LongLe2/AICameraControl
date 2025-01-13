@@ -1,5 +1,4 @@
-import { AnnouncementType, PrimaryFundingRound } from "src/constants/enumBE";
-import { ANNOUNCEMENT_INFO } from "./announcement";
+import { PrimaryFundingRound } from "src/constants/enumBE";
 
 export const FUNDING_ROUNDs = [
   {
@@ -27,9 +26,3 @@ export const FUNDING_ROUNDs = [
     value: PrimaryFundingRound.SERIES_D,
   },
 ];
-
-export const ANNOUNCEMENT_TYPE = Object.keys(ANNOUNCEMENT_INFO).map((key) => ({
-  icon: ANNOUNCEMENT_INFO[key as unknown as AnnouncementType].icon,
-  value: key,
-  label: ANNOUNCEMENT_INFO[key as unknown as AnnouncementType].title,
-}));

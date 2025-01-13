@@ -1,10 +1,5 @@
-import { Box, Card, CardContent, Typography } from "@mui/joy";
-import { CardAnnouncements } from "src/components/common/dashboard/CardAnnouncements";
-import ChartFundingRound from "src/components/common/dashboard/ChartFundingRound";
-import ChartLRV from "src/components/common/dashboard/ChartLRV";
-import ChartPrice from "src/components/common/dashboard/ChartPrice";
-import ChartTrending from "src/components/common/dashboard/ChartTrending";
-import SecondarySnapshot from "src/components/common/dashboard/SecondarySnapshot";
+import { Box, Card, Typography } from "@mui/joy";
+
 import { useMedia } from "src/shared/hooks/useMedia";
 import { colors } from "src/styles/colors";
 
@@ -22,20 +17,11 @@ const DashboardUser = () => {
           gridTemplateRows: "repeat(auto-fill, minmax(300px, auto))",
           gap: 24,
         }}
-      >
-        <Box>
-          <CardAnnouncements isShowTime={isMobile ? false : true} />
-        </Box>
-        <Card>
-          <ChartTrending />
-        </Card>
-      </Box>
+      ></Box>
       <Typography level="h4" sx={{ my: 24 }}>
         Secondary Snapshot
       </Typography>
-      <Box>
-        <SecondarySnapshot />
-      </Box>
+
       <Box
         sx={{
           display: "grid",
@@ -55,9 +41,6 @@ const DashboardUser = () => {
           <Typography level="h5" sx={{ mb: 24 }}>
             LRV
           </Typography>
-          <CardContent sx={{ marginTop: 22, padding: "20px 0 0 0" }}>
-            <ChartLRV />
-          </CardContent>
         </Card>
         <Card sx={{ p: "20px" }}>
           <Box>
@@ -72,9 +55,6 @@ const DashboardUser = () => {
               By Series
             </Typography>
           </Box>
-          <CardContent sx={{ padding: "20px 0 0 0" }}>
-            <ChartFundingRound />
-          </CardContent>
         </Card>
         <Card sx={{ p: "20px" }}>
           <Box sx={{ mb: 24 }}>
@@ -88,9 +68,6 @@ const DashboardUser = () => {
               Premium discount to LFR
             </Typography>
           </Box>
-          <CardContent sx={{ padding: "20px 0 0 0" }}>
-            <ChartPrice />
-          </CardContent>
         </Card>
       </Box>
     </>
