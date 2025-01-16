@@ -11,10 +11,6 @@ export interface IReqSaveInviteCode {
   registerBy: string;
 }
 
-export interface IReqSendInvitationCode {
-  to: string;
-}
-
 export interface IResInvited {
   message: string;
   statusCode: number;

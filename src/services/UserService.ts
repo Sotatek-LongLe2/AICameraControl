@@ -1,39 +1,22 @@
 import { AxiosRequestConfig } from "axios";
 import {
-  IParamsGetDemands,
-  IParamsGetBidsOffers,
   IParamsGetIndications,
   IPersonalDetail,
   IReqCreatePassword,
   IReqForgotPassword,
   IReqResetPassword,
   IReqVerifyIdentity,
-  IReqVerifyInvitationCode,
   IResCreatePassword,
   IResGetMe,
   IResResetPassword,
-  IResSignRiskDisclosure,
   IResTimeResendEmail,
   IResVerifyIdentity,
-  IResVerifyInvitationCode,
-  TResponseGetDemands,
   TResponseGetIndication,
-  TResponseGetBidsOffers,
 } from "./UserService.types";
 import { api } from "./config";
 import { IResponse, TResponse } from "./type";
 
 export const UserService = {
-  verifyInvitationCode: (
-    data: IReqVerifyInvitationCode,
-    config?: AxiosRequestConfig
-  ) => {
-    return api.post<IResponse<IResVerifyInvitationCode>>(
-      "/user/verify-invitation-code",
-      data,
-      config
-    );
-  },
   createPassword: (data: IReqCreatePassword, config?: AxiosRequestConfig) => {
     return api.post<IResponse<IResCreatePassword>>(
       "/user/create-password",
@@ -61,13 +44,7 @@ export const UserService = {
       config
     );
   },
-  signRiskDisclosure: (config?: AxiosRequestConfig) => {
-    return api.post<IResponse<IResSignRiskDisclosure>>(
-      "/user/sign-risk-disclosure",
-      {},
-      config
-    );
-  },
+
   checkExpiresInMail: (email: string, config?: AxiosRequestConfig) => {
     return api.get<IResponse<void>>("/user/check-expires-in-mail", {
       ...config,
@@ -111,18 +88,6 @@ export const UserService = {
     config?: AxiosRequestConfig
   ) =>
     api.get<TResponseGetIndication>("/user/indications", {
-      ...config,
-      params,
-    }),
-
-  getDemands: (params: IParamsGetDemands, config?: AxiosRequestConfig) =>
-    api.get<TResponseGetDemands>("/user/demands", {
-      ...config,
-      params,
-    }),
-
-  getBidsOffers: (params: IParamsGetBidsOffers, config?: AxiosRequestConfig) =>
-    api.get<TResponseGetBidsOffers>("/user/bids-offers", {
       ...config,
       params,
     }),

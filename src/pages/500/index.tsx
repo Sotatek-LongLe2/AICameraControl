@@ -71,7 +71,7 @@ export default function Error500Page() {
               marginTop: "24px",
             }}
           >
-            Go Back To Your Astra Dashboard
+            Go Back To Your Dashboard
           </Button>
         </Box>
       </Box>

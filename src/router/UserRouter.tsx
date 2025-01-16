@@ -14,7 +14,6 @@ import CreatePasswordPage from "src/pages/create-password";
 import Dashboard from "src/pages/dashboard";
 import ForgotPasswordForm from "src/pages/forgot-password";
 import LoginForm from "src/pages/login";
-import RegisterForm from "src/pages/register";
 import ResetPasswordForm from "src/pages/reset-password";
 import { Settings } from "src/pages/settings";
 import UIKit from "src/pages/uikit";
@@ -122,7 +121,6 @@ const UserRouter: React.FC = () => {
     return (
       <Routes>
         <Route element={<DefaultLayout />}>
-          <Route path={PAGES.REGISTER} element={<RegisterForm />} />
           <Route
             path={PAGES.CREATE_PASSWORD}
             element={<CreatePasswordPage />}

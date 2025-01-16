@@ -3,7 +3,6 @@ import {
   IAdminActiveUserDto,
   IReqForcePassword,
   IReqSaveInviteCode,
-  IReqSendInvitationCode,
   IResForcePassword,
   IResInvited,
 } from "./AdminService.types";
@@ -25,13 +24,6 @@ export const AdminService = {
       data,
       config
     );
-  },
-
-  sendInvitationCode: (
-    data: IReqSendInvitationCode,
-    config?: AxiosRequestConfig
-  ) => {
-    return api.post<IResponse<void>>("/admin/send-invite-code", data, config);
   },
 
   verifyUser: (data: IAdminActiveUserDto, config?: AxiosRequestConfig) => {

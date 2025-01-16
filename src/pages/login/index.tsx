@@ -12,11 +12,9 @@ import { SITE_USER } from "src/constants/env";
 import { Message } from "src/constants/message";
 import { PAGES_ADMIN } from "src/constants/router";
 import { IReqLogin, IResLogin } from "src/services/AuthService.types";
-import { UserInformationService } from "src/services/UserInformationService";
-import validateStep from "src/shared/helpers/validateStep";
 import { useAppStore } from "src/store/appStore";
 import { useAuthStore } from "src/store/authStore";
-import { IProgress, useUserStore } from "src/store/userStore";
+import { useUserStore } from "src/store/userStore";
 import { colors } from "src/styles/colors";
 
 export default function LoginForm() {
@@ -31,7 +29,6 @@ export default function LoginForm() {
   const login = useAuthStore((state) => state.login);
   const setIsLogined = useAuthStore((state) => state.setIsLogined);
   const setPartialAccess = useAuthStore((state) => state.setPartialAccess);
-  const setProgress = useUserStore((state) => state.setProgress);
   const clearProgress = useUserStore((state) => state.clearProgress);
   const setLoading = useAppStore((state) => state.setLoading);
   const navigate = useNavigate();
@@ -111,27 +108,11 @@ export default function LoginForm() {
       throw new Error("You are not authorized to access this page");
       return;
     }
-    let progress: IProgress | undefined = undefined;
-
     // Redirect to registration page
-    const res = await UserInformationService.getCurrentStep();
-    if (res.data.statusCode === 200) {
-      progress = { ...res.data.data };
-      setProgress(progress);
-    } else throw new Error("Failed to get current step");
 
     if (data.data.status === UserStatus.ACTIVE) {
       setIsLogined(true);
       setPartialAccess("full");
-    } else {
-      // Validate step & redirect to target page
-      const targetPage = validateStep(progress as IProgress);
-      if (targetPage) {
-        // Timeout for switch router
-        setTimeout(() => {
-          navigate(targetPage);
-        }, 0);
-      }
     }
   };
 

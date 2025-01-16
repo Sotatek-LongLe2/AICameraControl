@@ -57,7 +57,7 @@ export default function Error404Page() {
             marginTop: "20px",
           }}
         >
-          Access your Astra Dashboard
+          Access your Dashboard
         </Button>
       </Box>
     </Box>
